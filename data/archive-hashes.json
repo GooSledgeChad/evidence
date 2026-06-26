@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-20T23:36:49.610Z",
+  "master_hash": "eda2215131ffe304566b41a87c645da763df3439837c1e10b157460366a0e5f5",
+  "files": {
+    "evidence.json": "9b1926f85334fafa0f6a6ac3ec2487037ed0c8f0f5a9befc7aac1fc51940eba4",
+    "investigation.db": "cd103d5131891e88891e09812ad043778941f09ecc268b6993f53b4632807bd0",
+    "message-manifest.json": "c23ef005fecfc5f27d09b86b1f14765dfcf7fb6ce7abfba1d27de773ccda2338"
+  },
+  "instructions": "Compare master_hash against the value in the initial Git commit to verify archive integrity."
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SwiftCheetah Evidence</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+      color: #333;
+      padding: 3rem 1.5rem;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.6;
+    }
+    h1 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+
+    .tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 2rem; border-bottom: 1px solid #e5e5e5; }
+    .tabs button {
+      background: none; border: none; padding: 0.5rem 1.2rem; font-size: 0.85rem;
+      color: #999; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    }
+    .tabs button.active { color: #333; border-bottom-color: #333; }
+    .tabs button:hover { color: #555; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .post { text-align: left; }
+    .post h1 { font-size: 1.2rem; text-align: left; }
+    .post h2 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; text-align: left; }
+    .post h3 { font-size: 0.9rem; margin-top: 1rem; margin-bottom: 0.4rem; text-align: left; }
+    .post p { font-size: 0.85rem; margin-bottom: 0.75rem; }
+    .post blockquote { border-left: 3px solid #ddd; padding-left: 0.75rem; margin: 0.5rem 0; color: #555; font-size: 0.83rem; }
+    .post img { max-width: 100%; border-radius: 4px; margin: 0.5rem 0; }
+    .post a { color: #2563eb; }
+    .post hr { border: none; border-top: 1px solid #e5e5e5; margin: 1.5rem 0; }
+    .post table { border-collapse: collapse; font-size: 0.8rem; margin: 0.75rem 0; width: 100%; }
+    .post th, .post td { border: 1px solid #e5e5e5; padding: 0.3rem 0.6rem; text-align: left; }
+    .post th { background: #fafafa; font-weight: 600; }
+    .post strong { font-weight: 600; }
+    .post em { font-style: italic; }
+    .post ul, .post ol { font-size: 0.85rem; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    .post code { font-size: 0.8rem; background: #f5f5f5; padding: 0.1rem 0.3rem; border-radius: 3px; }
+    .post-loading { color: #aaa; font-size: 0.85rem; margin-top: 2rem; }
+
+    .events { text-align: left; }
+    .event { border-bottom: 1px solid #eee; padding: 0.6rem 0; }
+    .event:last-child { border-bottom: none; }
+    .event a { color: inherit; text-decoration: none; display: block; }
+    .event a:hover .summary { text-decoration: underline; }
+    .summary { font-size: 0.85rem; }
+    .content { font-size: 0.8rem; color: #666; margin-top: 0.15rem; white-space: pre-wrap; word-break: break-word; }
+    .author { font-weight: 600; }
+    .meta { font-size: 0.75rem; color: #aaa; margin-top: 0.15rem; }
+    .empty { color: #aaa; font-size: 0.85rem; margin-top: 2rem; }
+    .error { color: #c00; font-size: 0.85rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>SwiftCheetah Evidence</h1>
+  <div class="tabs">
+    <button class="active" data-tab="post">Post</button>
+    <button data-tab="tamper">Discord tamper log</button>
+  </div>
+
+  <div class="tab-content active" id="tab-post">
+    <div class="post" id="post-content"><p class="post-loading">Loading...</p></div>
+  </div>
+
+  <div class="tab-content" id="tab-tamper">
+    <div class="events" id="events"><p class="empty">Loading...</p></div>
+  </div>
+
+  <script>
+    const REPO = "GooSledgeChad/evidence";
+    const BRANCH = "tamper-log";
+    const RAW = `https://raw.githubusercontent.com/${REPO}`;
+
+    document.querySelector(".tabs").addEventListener("click", e => {
+      if (e.target.tagName !== "BUTTON") return;
+      const tab = e.target.dataset.tab;
+      document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+      document.querySelectorAll(".tab-content").forEach(t => t.classList.toggle("active", t.id === "tab-" + tab));
+      if (tab === "tamper" && !tamperLoaded) loadTamper();
+    });
+
+    function md(src) {
+      let html = src
+        .replace(/^### (.+)$/gm, "<h3>$1</h3>")
+        .replace(/^## (.+)$/gm, "<h2>$1</h2>")
+        .replace(/^# (.+)$/gm, "<h1>$1</h1>")
+        .replace(/^---$/gm, "<hr>")
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*(.+?)\*/g, "<em>$1</em>")
+        .replace(/`(.+?)`/g, "<code>$1</code>")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+      html = html.replace(/^((?:> .*\n?)+)/gm, m => {
+        const inner = m.replace(/^> ?/gm, "").trim();
+        return `<blockquote>${inner}</blockquote>`;
+      });
+
+      html = html.replace(/^(\|.+\|\n\|[-| :]+\|\n(?:\|.+\|\n?)+)/gm, m => {
+        const rows = m.trim().split("\n");
+        const hdr = rows[0].split("|").filter(c => c.trim()).map(c => `<th>${c.trim()}</th>`).join("");
+        const body = rows.slice(2).map(r => {
+          const cells = r.split("|").filter(c => c.trim()).map(c => `<td>${c.trim()}</td>`).join("");
+          return `<tr>${cells}</tr>`;
+        }).join("");
+        return `<table><thead><tr>${hdr}</tr></thead><tbody>${body}</tbody></table>`;
+      });
+
+      html = html.replace(/\[SCREENSHOT: (.+?)\]/g, (_, name) => {
+        return `<img src="${RAW}/main/screenshots/${name}" alt="${name}" onerror="this.style.display='none'">`;
+      });
+
+      html = html.replace(/^(?!<[hbtiuola]|<hr|<table|<img)(.+)$/gm, "<p>$1</p>");
+      html = html.replace(/<p><\/p>/g, "");
+
+      return html;
+    }
+
+    async function loadPost() {
+      try {
+        const res = await fetch(`${RAW}/main/README.md`);
+        if (!res.ok) throw new Error("Failed to load");
+        const text = await res.text();
+        document.getElementById("post-content").innerHTML = md(text);
+      } catch (e) {
+        document.getElementById("post-content").innerHTML = `<p class="error">${esc(e.message)}</p>`;
+      }
+    }
+
+    let tamperLoaded = false;
+    let evidence = {};
+
+    function timeAgo(d) {
+      const s = Math.floor((Date.now() - d.getTime()) / 1000);
+      if (s < 60) return "just now";
+      const m = Math.floor(s / 60);
+      if (m < 60) return m + "m ago";
+      const h = Math.floor(m / 60);
+      if (h < 24) return h + "h ago";
+      return Math.floor(h / 24) + "d ago";
+    }
+
+    function esc(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+    function truncate(s, n) { return s.length > n ? s.slice(0, n) + "..." : s; }
+
+    async function loadEvidence() {
+      try {
+        const res = await fetch(`${RAW}/main/data/evidence.json`);
+        if (!res.ok) return;
+        const data = await res.json();
+        for (const msg of data.messages || []) evidence[msg.id] = msg;
+      } catch {}
+    }
+
+    async function loadTamper() {
+      tamperLoaded = true;
+      try {
+        await loadEvidence();
+        const treeRes = await fetch(`https://api.github.com/repos/${REPO}/git/trees/${BRANCH}?recursive=1`);
+        if (!treeRes.ok) throw new Error("GitHub API " + treeRes.status);
+        const tree = await treeRes.json();
+        const logFiles = tree.tree
+          .filter(f => f.path.startsWith("logs/tamper-log-") && f.path.endsWith(".jsonl"))
+          .map(f => f.path).sort();
+
+        const events = [];
+        for (const path of logFiles) {
+          const res = await fetch(`${RAW}/${BRANCH}/${path}`);
+          if (!res.ok) continue;
+          const text = await res.text();
+          for (const line of text.trim().split("\n")) {
+            if (!line.trim()) continue;
+            try {
+              const entry = JSON.parse(line);
+              if (entry.type && entry.type !== "heartbeat") events.push(entry);
+            } catch {}
+          }
+        }
+
+        events.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+        if (!events.length) {
+          document.getElementById("events").innerHTML = '<p class="empty">No changes detected yet.</p>';
+          return;
+        }
+
+        document.getElementById("events").innerHTML = events.map(e => {
+          const d = e.details || {};
+          const date = new Date(e.timestamp);
+          let author = d.author_tag, content = d.content;
+          if (d.message_id && evidence[d.message_id]) {
+            const a = evidence[d.message_id];
+            if (!author) author = a.author_tag;
+            if (!content || content === "[uncached]") content = a.content;
+          }
+          if (content === "[uncached]" || !content) content = null;
+
+          let summary = "";
+          if (e.type === "message_deleted") { summary = "Message deleted"; if (d.channel_name) summary += ` in #${d.channel_name}`; }
+          else if (e.type === "message_edited") { summary = "Message edited"; if (d.channel_name) summary += ` in #${d.channel_name}`; }
+          else if (e.type === "bulk_delete") { summary = `${d.count || "?"} messages bulk-deleted`; if (d.channel_name) summary += ` in #${d.channel_name}`; }
+          else if (e.type === "channel_deleted") { summary = `Channel deleted: #${d.channel_name || d.channel_id}`; }
+          else { summary = e.type.replace(/_/g, " "); }
+
+          const contentHtml = author || content
+            ? `<div class="content">${author ? `<span class="author">${esc(author)}</span>: ` : ""}${content ? esc(truncate(content, 200)) : ""}</div>` : "";
+
+          return `<div class="event"><a href="https://github.com/${REPO}/tree/${BRANCH}/logs" target="_blank" rel="noopener"><span class="summary">${esc(summary)}</span>${contentHtml}<div class="meta">${e.hash ? e.hash.slice(0, 7) : ""} · ${timeAgo(date)}</div></a></div>`;
+        }).join("");
+      } catch (e) {
+        document.getElementById("events").innerHTML = `<p class="error">${esc(e.message)}</p>`;
+      }
+    }
+
+    loadPost();
+  </script>
+</body>
+</html>
