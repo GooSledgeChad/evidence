@@ -2,9 +2,9 @@
 
 **Content warning**: This post contains screenshots of racial slurs, homophobic slurs, antisemitism, Nazi imagery, rape threats, and suicide incitement. All content shown is from the Discord server and is presented solely as evidence.
 
-**Disclaimer**: English is not my first language. I used LLMs to help write this post so that my ideas could be understood clearly. However, every claim and piece of evidence presented here has been fact-checked multiple times against the original Discord messages. Every screenshot includes visible timestamps and usernames. A full evidence archive with a tamper-detection system is linked at the bottom of this post. Nothing has been fabricated, taken out of context, or exaggerated.
+**Disclaimer**: English is not my first language. I used LLMs to help write this post so that my ideas could be understood clearly. However, every claim and piece of evidence presented here has been fact-checked multiple times against the original Discord messages. Every screenshot includes visible timestamps and usernames. A [full evidence archive](https://github.com/GooSledgeChad/evidence) with a tamper-detection system is linked at the bottom of this post. Nothing has been fabricated, taken out of context, or exaggerated.
 
-**Note on methodology**: There were too many messages to check manually (41,842), so I used a combination of keyword matching and LLM-assisted passes to flag relevant evidence. Before presenting any evidence in this post, I manually reviewed the original messages and their surrounding context to make sure nothing was misrepresented. This post does not cover every flagged message in the archive. Some evidence was excluded because I could not verify full context or wasn't sure of its relevance. The full database is available in the linked repository for anyone who wants to do their own analysis. The exclusion of some content should not be used to dismiss the evidence that is presented.
+**Note on methodology**: There were too many messages to check manually (41,842), so I used a combination of keyword matching and LLM-assisted passes to flag relevant evidence. Before presenting any evidence in this post, I manually reviewed the original messages and their surrounding context to make sure nothing was misrepresented. This post does not cover every flagged message in the archive. Some evidence was excluded because I could not verify full context or wasn't sure of its relevance. The full database is available in the [linked repository](https://github.com/GooSledgeChad/evidence) for anyone who wants to do their own analysis. The exclusion of some content should not be used to dismiss the evidence that is presented.
 
 **Note on screenshots**: Some screenshots may show a cursor artifact in the bottom-right corner due to my screenshot software not being correctly configured. Additionally, if the Discord background color looks slightly off from the default theme, it's because my window has slight transparency, so my desktop background bleeds through.
 
@@ -194,7 +194,7 @@ A user named **Vyxen#0129** posted 147 messages on the server between November 2
 
 This user posted Nazi content for **5 straight months** and was never banned, never timed out, never warned. Other users noticed. One asked "Are you an ai or just a dumbass." The moderation team took no action. On a server where posting nudity gets you permanently banned, calling for the elimination of Jewish people is apparently acceptable.
 
-These messages are all in the evidence database and can be verified by anyone.
+These messages are all in the [evidence database](https://github.com/GooSledgeChad/evidence) and can be verified by anyone.
 
 ## The Server Has a Role Called "1# Racist"
 
@@ -241,7 +241,7 @@ On top of everything above, SwiftCheetah has a paid partnership with **Skycoach*
 
 ![SwiftCheetah promoting Skycoach RMT service with affiliate code SWIFT and link to s.skycoach.gg/TheSwiftCheetah](screenshots/48_skycoach_rmt_promotion.png)
 
-This is a direct violation of Embark Studios' Terms of Service, which explicitly prohibit players from selling, reselling, or exploiting game content for commercial purposes. As a prominent The Finals content creator with nearly 9,000 YouTube subscribers, SwiftCheetah is using his platform to direct his audience toward a service that violates the game's rules.
+This is a direct violation of [Embark Studios' Terms of Service](https://www.embark-studios.com/terms), which explicitly prohibit players from selling, reselling, or exploiting game content for commercial purposes. As a prominent The Finals content creator with nearly 9,000 YouTube subscribers, SwiftCheetah is using his platform to direct his audience toward a service that violates the game's rules.
 
 ## Why This Matters
 
@@ -280,19 +280,20 @@ After this post goes public, SwiftCheetah will likely try to delete messages, lo
 
 1. Before publishing this post, every file in the repository was given a unique digital fingerprint. These fingerprints were locked into the first commit of the repository. If even a single character in any file is changed after that point, the fingerprint won't match anymore, and anyone can detect it.
 2. A monitor is running inside the Discord server, watching for any changes. If a message from our archive gets deleted, edited, or if channels get locked or removed, it logs it automatically with a timestamp.
-3. Every time the monitor detects tampering, it automatically pushes the log to a public branch on the repository called `tamper-log`. This means GitHub itself timestamps every detection event. You can see what was deleted and when by checking that branch.
+3. Every time the monitor detects tampering, it automatically pushes the log to a public branch on the repository called [`tamper-log`](https://github.com/GooSledgeChad/evidence/tree/tamper-log). This means GitHub itself timestamps every detection event. You can see what was deleted and when by checking that branch.
 4. These logs are chained together. Each log entry includes a fingerprint of the previous one, so if someone tries to tamper with the logs themselves, the chain breaks and the tampering is detectable.
 
 **How to check it yourself:**
 
-- Go to the `tamper-log` branch on the repository. Every commit there is a tampering event detected by the monitor, timestamped by GitHub.
+- Go to the [`tamper-log`](https://github.com/GooSledgeChad/evidence/tree/tamper-log) branch on the repository. Every commit there is a tampering event detected by the monitor, timestamped by GitHub.
 - Clone the repository and run `bun run hash`. Compare the output against the fingerprint in the first commit. If they match, the data hasn't been modified.
 - Run `bun run verify` to check the full tamper logs and verify the chain is intact.
+- Or visit [swiftcheetah.netlify.app](https://swiftcheetah.netlify.app/) to view this post and the tamper log in a simple dashboard.
 
 **Anyone can run this monitor themselves.** The source code is fully open. If you have access to the server, you can run your own independent instance to confirm the findings.
 
 **What this means in practice:**
 
-If SwiftCheetah deletes 200 messages the day after this post goes up, the monitor will detect it, log it, and push the evidence to the public repository automatically. The deletion itself becomes evidence, timestamped by GitHub.
+If SwiftCheetah deletes 200 messages the day after this post goes up, the monitor will detect it, log it, and push the evidence to the [public repository](https://github.com/GooSledgeChad/evidence) automatically. The deletion itself becomes evidence, timestamped by GitHub.
 
 *This report was compiled through analysis of 41,842 messages collected from the TheSwiftCheetahs Discord server (ID: 1321966953350430740). All evidence has been preserved with original timestamps. LLMs were used for data analysis and writing assistance. Every claim made in this post is backed by the evidence shown above and the linked repository.*
