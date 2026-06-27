@@ -8,6 +8,8 @@
 
 **Note on screenshots**: Some screenshots may show a cursor artifact in the bottom-right corner due to my screenshot software not being correctly configured. Additionally, if the Discord background color looks slightly off from the default theme, it's because my window has slight transparency, so my desktop background bleeds through.
 
+**All evidence has been archived.** Every message, screenshot, and piece of data referenced in this post has been preserved in a public repository with a tamper-detection system that logs any attempt to delete or modify messages. Details on how this works are covered later in this post. You can view this post and a live log of modified or deleted messages at [swiftcheetah.netlify.app](https://swiftcheetah.netlify.app/).
+
 ## What Is This About?
 
 SwiftCheetah is a YouTuber who runs a Discord server called **"TheSwiftCheetahs"** with over **930 members**. After joining the server, I found it full of racism, homophobia, antisemitism, fascist content, rape threats, and suicide incitement. The server owner, SwiftCheetah, is fully aware of all of it and **actively protects it as a policy**.
