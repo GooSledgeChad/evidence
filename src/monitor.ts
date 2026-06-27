@@ -71,7 +71,10 @@ async function gitPush(commitMessage: string, eventTimestamp?: string) {
       }
       await Bun.$`git -C ${REPO_DIR} commit -m ${commitMessage}`.quiet();
       const sha = (await Bun.$`git -C ${REPO_DIR} rev-parse HEAD`.text()).trim();
-      await Bun.$`git -C ${REPO_DIR} push origin ${PUSH_BRANCH}`.quiet();
+      const push = Bun.spawnSync(["git", "-C", REPO_DIR, "push", "origin", PUSH_BRANCH]);
+      if (push.exitCode !== 0) {
+        throw new Error(`exit ${push.exitCode}: ${push.stderr.toString()}`);
+      }
       console.log(`[git] Pushed to ${PUSH_BRANCH}: ${commitMessage} (${sha.slice(0, 7)})`);
 
       const type = commitMessage.startsWith("heartbeat:") ? "heartbeat" : "tamper";
