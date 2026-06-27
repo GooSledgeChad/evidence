@@ -167,7 +167,10 @@
       try {
         await loadEvidence();
         const treeRes = await fetch(`https://api.github.com/repos/${REPO}/git/trees/${BRANCH}?recursive=1`);
-        if (!treeRes.ok) throw new Error("GitHub API " + treeRes.status);
+        if (!treeRes.ok) {
+          document.getElementById("events").innerHTML = '<p class="empty">No changes detected yet. The tamper monitor has not recorded any events.</p>';
+          return;
+        }
         const tree = await treeRes.json();
         const logFiles = tree.tree
           .filter(f => f.path.startsWith("logs/tamper-log-") && f.path.endsWith(".jsonl"))
