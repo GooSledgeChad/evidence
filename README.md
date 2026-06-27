@@ -98,6 +98,8 @@ He changed his Discord name to "im not gay stop putting pride flag":
 
 ![SwiftCheetah: "im gonna rape u"](screenshots/19_rape_threat.png)
 
+This could be interpreted as a joke, but even then, this is not the kind of joke you make in a public, community server.
+
 ## Members Use Slurs in Direct Replies to SwiftCheetah
 
 Members use racial slurs in direct replies to his messages. He just continues the conversation.
@@ -259,7 +261,7 @@ If you're a member of this server, I'd encourage you to take a look at what you'
 
 ## Evidence Repository and Anti-Tamper System
 
-All evidence shown in this post is backed by a public repository available at [REPO_LINK].
+All evidence shown in this post is backed by a public repository available at [github.com/GooSledgeChad/evidence](https://github.com/GooSledgeChad/evidence).
 
 **What's in it:**
 
