@@ -270,6 +270,8 @@ The hate speech extends beyond text. Members share hateful images and GIFs in ma
 ![A "Have you tried killing yourself" meme](screenshots/47_have_you_tried_kys.png)
 [View on Discord](https://discord.com/channels/1321966953350430740/1322619925075988550/1508648196329570376)
 
+**This post does not cover everything.** There is significantly more content like this in the server, and some of it is even worse than what is shown here. I chose to include only what I felt was necessary to make the point. If you want to form your own opinion, the server is public and you can join it yourself, though I strongly discourage doing so. You can also browse the full database of 41,842 messages in the [evidence repository](https://github.com/GooSledgeChad/evidence).
+
 ## The Numbers
 
 | Category | Flagged Instances |
