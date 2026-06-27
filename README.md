@@ -109,6 +109,8 @@ He asked mods to permaban everyone who reacted with a pride flag on his post:
 ![SwiftCheetah: "mods irl permaban everyone who reacted the gay flag on my lfg"](screenshots/09_pride_flag_permaban.png)
 [View on Discord](https://discord.com/channels/1321966953350430740/1322619925075988550/1494908788971671753)
 
+When asked if he was joking, he said "jokes." But this comes after he explicitly called being gay "shameful," used homophobic slurs against members, dismissed a transgender member's identity, endorsed "#BringBullyingBack," and changed his Discord name to protest pride flags. In that context, we can question the validity of the "joke" defense.
+
 He changed his Discord name to "im not gay stop putting pride flag":
 
 ![SwiftCheetah: "mods didnt like when I changed my name to 'im not gay stop putting pride flag' but they let people who are literally harrasing me just chill"](screenshots/18_pride_flag_name_change.png)
