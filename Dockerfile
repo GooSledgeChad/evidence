@@ -20,8 +20,8 @@ CMD ["sh", "-c", "\
   git config user.name \"${GIT_USER_NAME:-GooSledgeChad}\" && \
   git config user.email \"${GIT_USER_EMAIL:-gooslede@proton.me}\" && \
   git fetch origin ${TAMPER_BRANCH:-tamper-log} && \
-  git checkout ${TAMPER_BRANCH:-tamper-log} 2>/dev/null || git checkout -b ${TAMPER_BRANCH:-tamper-log} origin/${TAMPER_BRANCH:-tamper-log} 2>/dev/null; \
-  git branch --set-upstream-to=origin/${TAMPER_BRANCH:-tamper-log} ${TAMPER_BRANCH:-tamper-log} 2>/dev/null; \
+  git checkout -b ${TAMPER_BRANCH:-tamper-log} FETCH_HEAD && \
+  git branch --set-upstream-to=origin/${TAMPER_BRANCH:-tamper-log} ${TAMPER_BRANCH:-tamper-log} && \
   git checkout main -- package.json bun.lock src/ data/ && \
   bun install --frozen-lockfile && \
   bun run monitor \
