@@ -256,7 +256,7 @@ The hate speech extends beyond text. Members share hateful images and GIFs in ma
 [View on Discord](https://discord.com/channels/1321966953350430740/1322619925075988550/1515826773764472936)
 
 ![A GIF titled "CRYING WONT UNRAPE YOU"](screenshots/43_crying_wont_unrape.png)
-[View on Discord](https://discord.com/channels/1321966953350430740/1322619925075988550/1491641723884142833)
+[View on Discord](https://discord.com/channels/1321966953350430740/1322620722962628753/1491641723884142833)
 
 ![A "just kys gng" (kill yourself gang) meme](screenshots/44_just_kys_gng.png)
 [View on Discord](https://discord.com/channels/1321966953350430740/1322619925075988550/1465122686584750278)
