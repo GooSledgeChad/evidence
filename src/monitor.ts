@@ -72,7 +72,7 @@ async function gitPush(commitMessage: string, eventTimestamp?: string) {
       await Bun.$`git -C ${REPO_DIR} commit -m ${commitMessage}`.quiet();
       const sha = (await Bun.$`git -C ${REPO_DIR} rev-parse HEAD`.text()).trim();
       try {
-        const pushOut = await Bun.$`git -C ${REPO_DIR} push origin ${PUSH_BRANCH} 2>&1`.text();
+        const pushOut = await Bun.$`git -C ${REPO_DIR} push -u origin ${PUSH_BRANCH} 2>&1`.text();
         console.log(`[git] Push output: ${pushOut.trim()}`);
       } catch (pushErr: any) {
         throw new Error(`push failed: ${pushErr.stderr?.toString() || pushErr.stdout?.toString() || pushErr.message}`);
