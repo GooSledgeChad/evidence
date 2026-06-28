@@ -1,10 +1,10 @@
 FROM oven/bun:1-alpine
 
-RUN apk add --no-cache git openssh-client && \
-    adduser -D -h /home/monitor monitor && \
-    mkdir -p /home/monitor/.ssh && \
-    ssh-keyscan github.com >> /home/monitor/.ssh/known_hosts 2>/dev/null && \
-    chown -R monitor:monitor /home/monitor
+RUN apk add --no-cache git openssh-client
+RUN adduser -D -h /home/monitor monitor
+RUN mkdir -p /home/monitor/.ssh
+RUN ssh-keyscan github.com >> /home/monitor/.ssh/known_hosts 2>/dev/null
+RUN chown -R monitor:monitor /home/monitor
 
 USER monitor
 WORKDIR /home/monitor
