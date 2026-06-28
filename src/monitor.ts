@@ -71,9 +71,11 @@ async function gitPush(commitMessage: string, eventTimestamp?: string) {
       }
       await Bun.$`git -C ${REPO_DIR} commit -m ${commitMessage}`.quiet();
       const sha = (await Bun.$`git -C ${REPO_DIR} rev-parse HEAD`.text()).trim();
-      const push = Bun.spawnSync(["git", "-C", REPO_DIR, "push", "origin", PUSH_BRANCH]);
-      if (push.exitCode !== 0) {
-        throw new Error(`exit ${push.exitCode}: ${push.stderr.toString()}`);
+      try {
+        const pushOut = await Bun.$`git -C ${REPO_DIR} push origin ${PUSH_BRANCH} 2>&1`.text();
+        console.log(`[git] Push output: ${pushOut.trim()}`);
+      } catch (pushErr: any) {
+        throw new Error(`push failed: ${pushErr.stderr?.toString() || pushErr.stdout?.toString() || pushErr.message}`);
       }
       console.log(`[git] Pushed to ${PUSH_BRANCH}: ${commitMessage} (${sha.slice(0, 7)})`);
 
@@ -147,10 +149,14 @@ client.once("ready", async () => {
   console.log(`Logs: ${LOGS_DIR}`);
 
   try {
-    await Bun.$`git -C ${REPO_DIR} checkout -B ${PUSH_BRANCH}`.quiet();
-    console.log(`[git] On branch ${PUSH_BRANCH}`);
-  } catch {
-    console.log(`[git] Branch ${PUSH_BRANCH} already exists, staying on it`);
+    const branch = (await Bun.$`git -C ${REPO_DIR} branch --show-current`.text()).trim();
+    if (branch !== PUSH_BRANCH) {
+      await Bun.$`git -C ${REPO_DIR} checkout ${PUSH_BRANCH}`.quiet();
+    }
+    await Bun.$`git -C ${REPO_DIR} branch --set-upstream-to=origin/${PUSH_BRANCH} ${PUSH_BRANCH}`.quiet();
+    console.log(`[git] On branch ${PUSH_BRANCH} (tracking origin/${PUSH_BRANCH})`);
+  } catch (e: any) {
+    console.error(`[git] Branch setup error: ${e.message}`);
   }
 });
 
