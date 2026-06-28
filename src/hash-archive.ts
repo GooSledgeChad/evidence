@@ -15,11 +15,11 @@ async function main() {
   console.log(`Generated: ${new Date().toISOString()}`);
   console.log("");
 
+  const EVIDENCE_FILES = ["evidence.json", "investigation.db", "message-manifest.json"];
   const files = await readdir(DATA_DIR);
   const hashes: Record<string, string> = {};
 
-  for (const file of files.sort()) {
-    if (file === "archive-hashes.json") continue;
+  for (const file of files.filter(f => EVIDENCE_FILES.includes(f)).sort()) {
     const filePath = resolve(DATA_DIR, file);
     const hash = await hashFile(filePath);
     hashes[file] = hash;
