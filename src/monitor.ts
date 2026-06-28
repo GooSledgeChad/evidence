@@ -148,16 +148,8 @@ client.once("ready", async () => {
   console.log(`Pushing to branch: ${PUSH_BRANCH}`);
   console.log(`Logs: ${LOGS_DIR}`);
 
-  try {
-    const branch = (await Bun.$`git -C ${REPO_DIR} branch --show-current`.text()).trim();
-    if (branch !== PUSH_BRANCH) {
-      await Bun.$`git -C ${REPO_DIR} checkout ${PUSH_BRANCH}`.quiet();
-    }
-    await Bun.$`git -C ${REPO_DIR} branch --set-upstream-to=origin/${PUSH_BRANCH} ${PUSH_BRANCH}`.quiet();
-    console.log(`[git] On branch ${PUSH_BRANCH} (tracking origin/${PUSH_BRANCH})`);
-  } catch (e: any) {
-    console.error(`[git] Branch setup error: ${e.message}`);
-  }
+  const branch = (await Bun.$`git -C ${REPO_DIR} branch --show-current`.text()).trim();
+  console.log(`[git] On branch ${branch}`);
 });
 
 client.on("messageDelete", async (message) => {
