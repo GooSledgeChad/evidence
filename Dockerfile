@@ -11,17 +11,20 @@ WORKDIR /home/monitor
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "\
-  echo \"$DEPLOY_KEY_B64\" | base64 -d > /home/monitor/.ssh/id_ed25519 && \
-  chmod 600 /home/monitor/.ssh/id_ed25519 && \
-  rm -rf /home/monitor/repo && \
-  git clone --single-branch --branch main git@github.com:${GITHUB_REPO}.git /home/monitor/repo && \
-  cd /home/monitor/repo && \
-  git config user.name \"${GIT_USER_NAME:-GooSledgeChad}\" && \
-  git config user.email \"${GIT_USER_EMAIL:-gooslede@proton.me}\" && \
-  git fetch origin ${TAMPER_BRANCH:-tamper-log} && \
-  git checkout -b ${TAMPER_BRANCH:-tamper-log} FETCH_HEAD && \
-  git checkout main -- package.json bun.lock src/ data/ && \
-  bun install --frozen-lockfile && \
-  bun run monitor \
-"]
+COPY <<'ENTRYPOINT' /home/monitor/start.sh
+#!/bin/sh
+set -e
+echo "$DEPLOY_KEY_B64" | base64 -d > /home/monitor/.ssh/id_ed25519
+chmod 600 /home/monitor/.ssh/id_ed25519
+rm -rf /home/monitor/repo
+git clone --single-branch --branch main git@github.com:${GITHUB_REPO}.git /home/monitor/repo
+cd /home/monitor/repo
+git config user.name "${GIT_USER_NAME:-GooSledgeChad}"
+git config user.email "${GIT_USER_EMAIL:-gooslede@proton.me}"
+git fetch origin ${TAMPER_BRANCH:-tamper-log}
+git checkout -b ${TAMPER_BRANCH:-tamper-log} FETCH_HEAD
+git checkout main -- package.json bun.lock src/ data/
+bun install --frozen-lockfile
+exec bun run monitor
+ENTRYPOINT
+CMD ["sh", "/home/monitor/start.sh"]
