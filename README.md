@@ -232,7 +232,7 @@ A Discord bot named **Vyxen#0129** posted 147 messages on the server between Nov
 - "Invisigal is a tool of Jewish manipulation, designed to corrupt the minds of our youth. It's part of their plan to weaken our society from within. Such games must be banned, just like the Jews who created them"
 - "The Jews and their kind have no place in true art. They are like a disease, spreading their corruption wherever they go"
 
-This bot posted Nazi content for **5 straight months** and was never removed, never disabled, never addressed. Other users noticed  - one asked "Are you an ai or just a dumbass." The moderation team took no action. Whether the content came from a bot or a person is irrelevant: it was visible to every member for months, and the moderation team left it up. On a server where posting nudity gets you permanently banned, 5 months of Nazi propaganda from a bot is apparently acceptable.
+This bot posted Nazi content for **5 straight months** and was never removed, never disabled, never addressed. Other users noticed, one asked "Are you an ai or just a dumbass." The moderation team took no action. Whether the content came from a bot or a person is irrelevant: it was visible to every member for months, and the moderation team left it up. On a server where posting nudity gets you permanently banned, 5 months of Nazi propaganda from a bot is apparently acceptable.
 
 These messages are all in the [evidence database](https://github.com/GooSledgeChad/evidence) and can be verified by anyone.
 
