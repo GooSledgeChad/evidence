@@ -283,6 +283,8 @@ The hate speech extends beyond text. Members share hateful images and GIFs in ma
 | Fascist / Neo-Nazi | 26 |
 | **Total** | **1,068** |
 
+*A single message can be flagged under multiple categories (e.g., a message containing both a racial slur and a threat counts toward both), so the total exceeds the 604 unique flagged messages.*
+
 **53 users** were flagged across 25 channels, with the bulk coming from just 6 heavy repeat offenders who have been active for months with zero consequences.
 
 ## SwiftCheetah Promotes Real Money Trading
@@ -292,7 +294,7 @@ On top of everything above, SwiftCheetah has a paid partnership with **Skycoach*
 ![SwiftCheetah promoting Skycoach RMT service with affiliate code SWIFT and link to s.skycoach.gg/TheSwiftCheetah](screenshots/48_skycoach_rmt_promotion.png)
 [View on Discord](https://discord.com/channels/1321966953350430740/1323499536160784406/1470766125401899109)
 
-This is a direct violation of [Embark Studios' Terms of Service](https://www.embark-studios.com/terms), which explicitly prohibit players from selling, reselling, or exploiting game content for commercial purposes. As a prominent The Finals content creator with nearly 9,000 YouTube subscribers, SwiftCheetah is using his platform to direct his audience toward a service that violates the game's rules.
+This is a direct violation of [Embark Studios' Terms of Service](https://www.embark-studios.com/terms), which explicitly prohibit players from selling, reselling, or exploiting game content for commercial purposes. As a prominent The Finals content creator with nearly 9,000 YouTube subscribers, SwiftCheetah is also promoting RMT services for ARC Raiders, another Embark Studios game, in violation of the same developer's terms.
 
 ## Why This Matters
 
