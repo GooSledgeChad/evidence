@@ -24,6 +24,7 @@ git config user.email "${GIT_USER_EMAIL:-gooslede@proton.me}"
 git fetch origin ${TAMPER_BRANCH:-tamper-log}
 git checkout -b ${TAMPER_BRANCH:-tamper-log} FETCH_HEAD
 git checkout main -- package.json bun.lock src/ data/
+mkdir -p logs
 bun install --frozen-lockfile
 exec bun run monitor
 ENTRYPOINT
