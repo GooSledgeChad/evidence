@@ -56,6 +56,7 @@
     .content { font-size: 0.8rem; color: #666; margin-top: 0.15rem; white-space: pre-wrap; word-break: break-word; }
     .author { font-weight: 600; }
     .meta { font-size: 0.75rem; color: #aaa; margin-top: 0.15rem; }
+    .note { color: #aaa; font-size: 0.75rem; margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 0.75rem; }
     .empty { color: #aaa; font-size: 0.85rem; margin-top: 2rem; }
     .error { color: #c00; font-size: 0.85rem; margin-top: 2rem; }
   </style>
@@ -73,6 +74,7 @@
 
   <div class="tab-content" id="tab-tamper">
     <div class="events" id="events"><p class="empty">Loading...</p></div>
+    <p class="note">"Content uncached" means the message was not in the bot's local cache when it was deleted. The content was never seen by the monitor, only the deletion event was recorded. The message may still exist in the archived database if it was collected before the monitor started.</p>
   </div>
 
   <script>
@@ -158,7 +160,7 @@
         const res = await fetch(`${RAW}/main/data/evidence.json`);
         if (!res.ok) return;
         const data = await res.json();
-        for (const msg of data.messages || []) evidence[msg.id] = msg;
+        for (const msg of data.flagged_messages || []) evidence[msg.id] = msg;
       } catch {}
     }
 
@@ -215,8 +217,18 @@
           else if (e.type === "channel_deleted") { summary = `Channel deleted: #${d.channel_name || d.channel_id}`; }
           else { summary = e.type.replace(/_/g, " "); }
 
-          const contentHtml = author || content
-            ? `<div class="content">${author ? `<span class="author">${esc(author)}</span>: ` : ""}${content ? esc(truncate(content, 200)) : ""}</div>` : "";
+          let contentHtml = "";
+          if (e.type === "message_edited") {
+            const oldC = d.old_content && d.old_content !== "[uncached]" ? d.old_content : null;
+            const newC = d.new_content && d.new_content !== "[uncached]" ? d.new_content : null;
+            contentHtml = `<div class="content">${author ? `<span class="author">${esc(author)}</span>` : ""}${oldC ? `<br>Before: ${esc(truncate(oldC, 200))}` : ""}${newC ? `<br>After: ${esc(truncate(newC, 200))}` : ""}</div>`;
+          } else if (e.type === "bulk_delete" && d.messages && d.messages.length) {
+            const items = d.messages.filter(m => m.was_in_archive).slice(0, 10);
+            contentHtml = items.length ? `<div class="content">${items.map(m => `<span class="author">${esc(m.author || "?")}</span>: ${esc(truncate(m.content || "[uncached]", 120))}`).join("<br>")}${d.messages.filter(m => m.was_in_archive).length > 10 ? `<br><em>...and ${d.messages.filter(m => m.was_in_archive).length - 10} more</em>` : ""}</div>` : "";
+          } else {
+            const display = content ? esc(truncate(content, 200)) : "content uncached";
+            contentHtml = `<div class="content">${author ? `<span class="author">${esc(author)}</span>: ` : ""}${display}</div>`;
+          }
 
           return `<div class="event"><a href="https://github.com/${REPO}/tree/${BRANCH}/logs" target="_blank" rel="noopener"><span class="summary">${esc(summary)}</span>${contentHtml}<div class="meta">${e.hash ? e.hash.slice(0, 7) : ""} · ${timeAgo(date)}</div></a></div>`;
         }).join("");
