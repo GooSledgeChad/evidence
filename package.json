@@ -1,0 +1,26 @@
+{
+  "name": "swiftcheetah-evidence",
+  "version": "1.0.0",
+  "description": "Tamper-detection monitor for TheSwiftCheetahs Discord server evidence",
+  "type": "module",
+  "scripts": {
+    "monitor": "bun run src/monitor.ts",
+    "monitor:test": "TEST_MODE=true bun run src/monitor.ts",
+    "export-evidence": "bun run src/export-evidence.ts",
+    "verify": "bun run src/verify.ts",
+    "hash": "bun run src/hash-archive.ts",
+    "pdf": "bun run src/export-pdf.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "debug": "^4.4.3",
+    "discord.js-selfbot-v13": "^3.7.1",
+    "marked": "^18.0.5"
+  }
+}
