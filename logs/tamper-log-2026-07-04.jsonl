@@ -28,3 +28,6 @@
 {"type":"heartbeat","timestamp":"2026-07-04T15:08:49.467Z","events_logged":58,"chain_hash":"d31e3cc731f272f78080452692821be923139e6be0101e6e87bb8ec65612e91f"}
 {"type":"heartbeat","timestamp":"2026-07-04T16:08:49.469Z","events_logged":58,"chain_hash":"d31e3cc731f272f78080452692821be923139e6be0101e6e87bb8ec65612e91f"}
 {"type":"heartbeat","timestamp":"2026-07-04T17:08:49.469Z","events_logged":58,"chain_hash":"d31e3cc731f272f78080452692821be923139e6be0101e6e87bb8ec65612e91f"}
+{"type":"channel_updated","timestamp":"2026-07-04T17:39:33.581Z","details":{"channel_id":"1411425465033560144","old_name":"👥 Total Members: 952","new_name":"👥 Total Members: 953","type":"GUILD_VOICE"},"previous_hash":"d31e3cc731f272f78080452692821be923139e6be0101e6e87bb8ec65612e91f","hash":"c6ba601df7080bcc4551f477b86c7574e88a61a587065a510b5f88354b51e833"}
+{"type":"channel_updated","timestamp":"2026-07-04T17:58:03.931Z","details":{"channel_id":"1357554345926856897","old_name":"Office","new_name":"Office","type":"GUILD_VOICE"},"previous_hash":"c6ba601df7080bcc4551f477b86c7574e88a61a587065a510b5f88354b51e833","hash":"4ad58bbd41101f95641fbdbb6aa9c0f4906a0f48e9c691ab1e88356ba490327e"}
+{"type":"heartbeat","timestamp":"2026-07-04T18:08:49.470Z","events_logged":60,"chain_hash":"4ad58bbd41101f95641fbdbb6aa9c0f4906a0f48e9c691ab1e88356ba490327e"}
