@@ -48,3 +48,4 @@
 {"type":"heartbeat","timestamp":"2026-07-13T16:36:22.070Z","events_logged":137,"chain_hash":"d247cb4a1209a2c12fff450a259df9df25f2b78f97af22864e50baf0dd7c0ae9"}
 {"type":"heartbeat","timestamp":"2026-07-13T17:36:22.072Z","events_logged":137,"chain_hash":"d247cb4a1209a2c12fff450a259df9df25f2b78f97af22864e50baf0dd7c0ae9"}
 {"type":"heartbeat","timestamp":"2026-07-13T18:36:22.072Z","events_logged":137,"chain_hash":"d247cb4a1209a2c12fff450a259df9df25f2b78f97af22864e50baf0dd7c0ae9"}
+{"type":"channel_deleted","timestamp":"2026-07-13T19:14:51.498Z","details":{"channel_id":"1525664066952232980","channel_name":"food🍔🌭🌮","channel_type":"GUILD_TEXT"},"previous_hash":"d247cb4a1209a2c12fff450a259df9df25f2b78f97af22864e50baf0dd7c0ae9","hash":"32d93b5ec832be752f3f94f29db4caab966d41f45acad9fc09fb9ee09b65329f"}
