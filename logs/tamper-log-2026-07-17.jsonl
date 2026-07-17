@@ -22,3 +22,5 @@
 {"type":"heartbeat","timestamp":"2026-07-17T17:36:22.136Z","events_logged":189,"chain_hash":"cfac58aa6ed7571ae18fe892aa6e80c6b55674f3421eb70c3ef7ce8b51b46832"}
 {"type":"heartbeat","timestamp":"2026-07-17T18:36:22.136Z","events_logged":189,"chain_hash":"cfac58aa6ed7571ae18fe892aa6e80c6b55674f3421eb70c3ef7ce8b51b46832"}
 {"type":"channel_deleted","timestamp":"2026-07-17T18:51:19.602Z","details":{"channel_id":"1525663269023383562","channel_name":"🎨-art","channel_type":"GUILD_TEXT"},"previous_hash":"cfac58aa6ed7571ae18fe892aa6e80c6b55674f3421eb70c3ef7ce8b51b46832","hash":"1982357053c104411210ad05bf7e73aa4972f834a1682894ebf88c5d4f16eba1"}
+{"type":"channel_updated","timestamp":"2026-07-17T19:15:16.200Z","details":{"channel_id":"1322628172923146270","old_name":"🔉 Classroom","new_name":"🔉 Classroom","type":"GUILD_VOICE"},"previous_hash":"1982357053c104411210ad05bf7e73aa4972f834a1682894ebf88c5d4f16eba1","hash":"09d69ab09e72468549cfd050a5c1a0ddfb599567ad744096924de9f59fbfd95e"}
+{"type":"heartbeat","timestamp":"2026-07-17T19:36:22.137Z","events_logged":191,"chain_hash":"09d69ab09e72468549cfd050a5c1a0ddfb599567ad744096924de9f59fbfd95e"}
