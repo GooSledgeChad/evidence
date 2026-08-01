@@ -23,3 +23,5 @@
 {"type":"heartbeat","timestamp":"2026-08-01T15:56:16.731Z","events_logged":10,"chain_hash":"40d345c4016ef441945ceeb73df56b57ec8bff652b9563e15ad6389c3dc92776"}
 {"type":"heartbeat","timestamp":"2026-08-01T16:56:16.732Z","events_logged":10,"chain_hash":"40d345c4016ef441945ceeb73df56b57ec8bff652b9563e15ad6389c3dc92776"}
 {"type":"heartbeat","timestamp":"2026-08-01T17:56:16.732Z","events_logged":10,"chain_hash":"40d345c4016ef441945ceeb73df56b57ec8bff652b9563e15ad6389c3dc92776"}
+{"type":"message_deleted","timestamp":"2026-08-01T18:16:02.125Z","details":{"message_id":"1532854670781845628","channel_id":"1322983135369236502","channel_name":"📋-rules","author_id":"1411411507899662519","author_tag":"SwiftBot","content":"","was_in_archive":false,"original_timestamp":"2026-07-31T20:57:12.577Z"},"previous_hash":"40d345c4016ef441945ceeb73df56b57ec8bff652b9563e15ad6389c3dc92776","hash":"1594a5cfb612b2c8899a3905bb202bff2bf9b6e8e7c05a1b4a62ae2254dfcfcd"}
+{"type":"heartbeat","timestamp":"2026-08-01T18:56:16.734Z","events_logged":11,"chain_hash":"1594a5cfb612b2c8899a3905bb202bff2bf9b6e8e7c05a1b4a62ae2254dfcfcd"}
