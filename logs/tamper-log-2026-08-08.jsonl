@@ -16,3 +16,5 @@
 {"type":"heartbeat","timestamp":"2026-08-08T12:56:16.845Z","events_logged":75,"chain_hash":"183b9d0d7bf87eebf2acce7b4cbb3d0bb5e84e7727f3ebd67c78e6e1efd287dd"}
 {"type":"heartbeat","timestamp":"2026-08-08T13:56:16.845Z","events_logged":75,"chain_hash":"183b9d0d7bf87eebf2acce7b4cbb3d0bb5e84e7727f3ebd67c78e6e1efd287dd"}
 {"type":"heartbeat","timestamp":"2026-08-08T14:56:16.847Z","events_logged":75,"chain_hash":"183b9d0d7bf87eebf2acce7b4cbb3d0bb5e84e7727f3ebd67c78e6e1efd287dd"}
+{"type":"message_deleted","timestamp":"2026-08-08T14:57:11.341Z","details":{"message_id":"1535663148214915215","channel_id":"1322620722962628753","channel_name":"💡-video-ideas","author_id":"1406089148279820308","author_tag":"dudexlx32_28590","content":"o bomber","was_in_archive":false,"original_timestamp":"2026-08-08T14:57:05.776Z"},"previous_hash":"183b9d0d7bf87eebf2acce7b4cbb3d0bb5e84e7727f3ebd67c78e6e1efd287dd","hash":"8392e5454158895a4e786af137b4c70b7f4c878cd93dc17972b9134ee6c9b836"}
+{"type":"heartbeat","timestamp":"2026-08-08T15:56:16.848Z","events_logged":76,"chain_hash":"8392e5454158895a4e786af137b4c70b7f4c878cd93dc17972b9134ee6c9b836"}
