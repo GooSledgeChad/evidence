@@ -43,3 +43,6 @@
 {"type":"heartbeat","timestamp":"2026-08-20T20:59:55.102Z","events_logged":83,"chain_hash":"f5abfc948c3cb258a6262b2ee458c59f8775becbc3aeef37d831364465261bd0"}
 {"type":"heartbeat","timestamp":"2026-08-20T21:59:55.103Z","events_logged":83,"chain_hash":"f5abfc948c3cb258a6262b2ee458c59f8775becbc3aeef37d831364465261bd0"}
 {"type":"heartbeat","timestamp":"2026-08-20T22:59:55.105Z","events_logged":83,"chain_hash":"f5abfc948c3cb258a6262b2ee458c59f8775becbc3aeef37d831364465261bd0"}
+{"type":"channel_updated","timestamp":"2026-08-20T23:37:24.048Z","details":{"channel_id":"1357554345926856897","old_name":"Office","new_name":"Office","type":"GUILD_VOICE"},"previous_hash":"f5abfc948c3cb258a6262b2ee458c59f8775becbc3aeef37d831364465261bd0","hash":"0ce453242cc8e9d06d2fb28c561ce42bcd51a862fadfd56277d07cfe3a95e759"}
+{"type":"channel_updated","timestamp":"2026-08-20T23:50:08.341Z","details":{"channel_id":"1411425465033560144","old_name":"👥 Total Members: 1100","new_name":"👥 Total Members: 1099","type":"GUILD_VOICE"},"previous_hash":"0ce453242cc8e9d06d2fb28c561ce42bcd51a862fadfd56277d07cfe3a95e759","hash":"b8e57fc73dd6b74d3ae233c7c070ba6c360d6a601ba5dcd7969457bcba2c5f67"}
+{"type":"heartbeat","timestamp":"2026-08-20T23:59:55.105Z","events_logged":85,"chain_hash":"b8e57fc73dd6b74d3ae233c7c070ba6c360d6a601ba5dcd7969457bcba2c5f67"}
