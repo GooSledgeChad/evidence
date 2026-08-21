@@ -1,0 +1,2 @@
+{"type":"channel_updated","timestamp":"2026-08-21T00:40:15.964Z","details":{"channel_id":"1357554345926856897","old_name":"Office","new_name":"Office","type":"GUILD_VOICE"},"previous_hash":"b8e57fc73dd6b74d3ae233c7c070ba6c360d6a601ba5dcd7969457bcba2c5f67","hash":"4578b6cf4895db5f8d1dd4f647ee934609171d2bcdfaaa9f4d8b9fc566e409f9"}
+{"type":"heartbeat","timestamp":"2026-08-21T00:59:55.105Z","events_logged":86,"chain_hash":"4578b6cf4895db5f8d1dd4f647ee934609171d2bcdfaaa9f4d8b9fc566e409f9"}
