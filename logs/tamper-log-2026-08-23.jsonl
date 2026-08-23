@@ -27,3 +27,5 @@
 {"type":"heartbeat","timestamp":"2026-08-23T19:58:50.826Z","events_logged":2,"chain_hash":"1afc9ace20c90f8462426392bc5b3148038c0ca15420468670e0d68bdb565c5d"}
 {"type":"heartbeat","timestamp":"2026-08-23T20:58:50.827Z","events_logged":2,"chain_hash":"1afc9ace20c90f8462426392bc5b3148038c0ca15420468670e0d68bdb565c5d"}
 {"type":"heartbeat","timestamp":"2026-08-23T21:58:50.828Z","events_logged":2,"chain_hash":"1afc9ace20c90f8462426392bc5b3148038c0ca15420468670e0d68bdb565c5d"}
+{"type":"message_deleted","timestamp":"2026-08-23T22:43:28.198Z","details":{"message_id":"1541216180222689435","channel_id":"1525993700402925599","channel_name":"💬-main-chat","author_id":"1208282847765602316","author_tag":"a_orphan_2525","content":"","was_in_archive":false,"original_timestamp":"2026-08-23T22:42:51.777Z"},"previous_hash":"1afc9ace20c90f8462426392bc5b3148038c0ca15420468670e0d68bdb565c5d","hash":"61ad79ab8c166f65656a87aff89f67f33e5ee1c5e1ab68065f5cdc3d161be710"}
+{"type":"heartbeat","timestamp":"2026-08-23T22:58:50.829Z","events_logged":3,"chain_hash":"61ad79ab8c166f65656a87aff89f67f33e5ee1c5e1ab68065f5cdc3d161be710"}
