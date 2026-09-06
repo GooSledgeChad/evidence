@@ -27,3 +27,6 @@
 {"type":"heartbeat","timestamp":"2026-09-06T13:52:18.948Z","events_logged":26,"chain_hash":"e259c4c29e6c7636660272e67f3128ab5753429d7df105c11266ce2608bb6b97"}
 {"type":"heartbeat","timestamp":"2026-09-06T14:52:18.949Z","events_logged":26,"chain_hash":"e259c4c29e6c7636660272e67f3128ab5753429d7df105c11266ce2608bb6b97"}
 {"type":"heartbeat","timestamp":"2026-09-06T15:52:18.950Z","events_logged":26,"chain_hash":"e259c4c29e6c7636660272e67f3128ab5753429d7df105c11266ce2608bb6b97"}
+{"type":"channel_updated","timestamp":"2026-09-06T15:55:05.448Z","details":{"channel_id":"1411425465033560144","old_name":"👥 Total Members: 1117","new_name":"👥 Total Members: 1118","type":"GUILD_VOICE"},"previous_hash":"e259c4c29e6c7636660272e67f3128ab5753429d7df105c11266ce2608bb6b97","hash":"81eca9f59c383589753fb857b0cc9abd1a5b248d8200e5424a27826da7845f95"}
+{"type":"channel_updated","timestamp":"2026-09-06T16:45:05.504Z","details":{"channel_id":"1411425465033560144","old_name":"👥 Total Members: 1118","new_name":"👥 Total Members: 1117","type":"GUILD_VOICE"},"previous_hash":"81eca9f59c383589753fb857b0cc9abd1a5b248d8200e5424a27826da7845f95","hash":"00dffd215c7487ca5fb6e8691f56d11d9c4e25446ec92cb8193c9bafdd46fd6c"}
+{"type":"heartbeat","timestamp":"2026-09-06T16:52:18.950Z","events_logged":28,"chain_hash":"00dffd215c7487ca5fb6e8691f56d11d9c4e25446ec92cb8193c9bafdd46fd6c"}
