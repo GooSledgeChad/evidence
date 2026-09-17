@@ -22,3 +22,5 @@
 {"type":"heartbeat","timestamp":"2026-09-17T14:52:19.184Z","events_logged":166,"chain_hash":"c3e70f69a4901095c875efe3e73b32ed915e4f9f6b61e6f780452c6f09a4ec84"}
 {"type":"heartbeat","timestamp":"2026-09-17T15:52:19.184Z","events_logged":166,"chain_hash":"c3e70f69a4901095c875efe3e73b32ed915e4f9f6b61e6f780452c6f09a4ec84"}
 {"type":"heartbeat","timestamp":"2026-09-17T16:52:19.185Z","events_logged":166,"chain_hash":"c3e70f69a4901095c875efe3e73b32ed915e4f9f6b61e6f780452c6f09a4ec84"}
+{"type":"channel_updated","timestamp":"2026-09-17T17:05:23.303Z","details":{"channel_id":"1411425465033560144","old_name":"👥 Total Members: 1152","new_name":"👥 Total Members: 1151","type":"GUILD_VOICE"},"previous_hash":"c3e70f69a4901095c875efe3e73b32ed915e4f9f6b61e6f780452c6f09a4ec84","hash":"5179c1d5294e0a72eb8818439f2b9dbfedc3a40e42eb6b5c59e2fce0f7a1216a"}
+{"type":"heartbeat","timestamp":"2026-09-17T17:52:19.185Z","events_logged":167,"chain_hash":"5179c1d5294e0a72eb8818439f2b9dbfedc3a40e42eb6b5c59e2fce0f7a1216a"}
