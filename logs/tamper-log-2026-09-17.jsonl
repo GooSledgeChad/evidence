@@ -18,3 +18,5 @@
 {"type":"heartbeat","timestamp":"2026-09-17T11:52:19.181Z","events_logged":165,"chain_hash":"a450f764b6f55384f0ba4839d4cfca064f166c6b92656fae894b907b00b89b25"}
 {"type":"heartbeat","timestamp":"2026-09-17T12:52:19.182Z","events_logged":165,"chain_hash":"a450f764b6f55384f0ba4839d4cfca064f166c6b92656fae894b907b00b89b25"}
 {"type":"heartbeat","timestamp":"2026-09-17T13:52:19.182Z","events_logged":165,"chain_hash":"a450f764b6f55384f0ba4839d4cfca064f166c6b92656fae894b907b00b89b25"}
+{"type":"message_deleted","timestamp":"2026-09-17T14:05:26.263Z","details":{"message_id":"1549498236920926360","channel_id":"1322983135369236502","channel_name":"📋-rules","author_id":"1411411507899662519","author_tag":"SwiftBot","content":"","was_in_archive":false,"original_timestamp":"2026-09-15T19:12:47.967Z"},"previous_hash":"a450f764b6f55384f0ba4839d4cfca064f166c6b92656fae894b907b00b89b25","hash":"c3e70f69a4901095c875efe3e73b32ed915e4f9f6b61e6f780452c6f09a4ec84"}
+{"type":"heartbeat","timestamp":"2026-09-17T14:52:19.184Z","events_logged":166,"chain_hash":"c3e70f69a4901095c875efe3e73b32ed915e4f9f6b61e6f780452c6f09a4ec84"}
