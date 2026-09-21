@@ -19,3 +19,5 @@
 {"type":"heartbeat","timestamp":"2026-09-21T10:52:19.240Z","events_logged":208,"chain_hash":"7650933a12cb0c853be828821f74aa05ccbc321d0bdc9464a277eac4d10eeeea"}
 {"type":"heartbeat","timestamp":"2026-09-21T11:52:19.240Z","events_logged":208,"chain_hash":"7650933a12cb0c853be828821f74aa05ccbc321d0bdc9464a277eac4d10eeeea"}
 {"type":"heartbeat","timestamp":"2026-09-21T12:52:19.241Z","events_logged":208,"chain_hash":"7650933a12cb0c853be828821f74aa05ccbc321d0bdc9464a277eac4d10eeeea"}
+{"type":"message_deleted","timestamp":"2026-09-21T13:43:55.267Z","details":{"message_id":"1551589747691098223","channel_id":"1324286342301225021","channel_name":"can-you-count","author_id":"1294401256261160970","author_tag":"lyn3y_","content":"5","was_in_archive":false,"original_timestamp":"2026-09-21T13:43:42.993Z"},"previous_hash":"7650933a12cb0c853be828821f74aa05ccbc321d0bdc9464a277eac4d10eeeea","hash":"0597f4bc3b11af9e35af84174bb0a9d87a5ed682a8bf69cf8ef071dbe76a11da"}
+{"type":"heartbeat","timestamp":"2026-09-21T13:52:19.241Z","events_logged":209,"chain_hash":"0597f4bc3b11af9e35af84174bb0a9d87a5ed682a8bf69cf8ef071dbe76a11da"}
