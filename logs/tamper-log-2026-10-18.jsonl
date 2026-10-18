@@ -14,3 +14,5 @@
 {"type":"heartbeat","timestamp":"2026-10-18T12:43:17.759Z","events_logged":0,"chain_hash":"GENESIS"}
 {"type":"heartbeat","timestamp":"2026-10-18T13:43:17.759Z","events_logged":0,"chain_hash":"GENESIS"}
 {"type":"heartbeat","timestamp":"2026-10-18T14:43:17.759Z","events_logged":0,"chain_hash":"GENESIS"}
+{"type":"channel_updated","timestamp":"2026-10-18T15:25:26.714Z","details":{"channel_id":"1411425465033560144","old_name":"👥 Total Members: 1200","new_name":"👥 Total Members: 1201","type":"GUILD_VOICE"},"previous_hash":"GENESIS","hash":"635ed9f4222f13cadfc1602780213a21ed1a775197a7c301286a313ce0abeb06"}
+{"type":"heartbeat","timestamp":"2026-10-18T15:43:17.761Z","events_logged":1,"chain_hash":"635ed9f4222f13cadfc1602780213a21ed1a775197a7c301286a313ce0abeb06"}
